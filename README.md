@@ -14,7 +14,7 @@ https://public.tableau.com/app/profile/aryan.more3059/viz/SouthWestWater-CallAba
 
 *"Why are we losing calls out of the queue, and how do we reduce them?"*
 
-This is the core question a resourcing analyst is asked. This project answers it end to end:
+This project answers it end to end:
 generating a realistic dataset, diagnosing the drivers in Python, and presenting the findings
 in a Tableau dashboard aimed at an operational decision.
 
@@ -23,7 +23,7 @@ in a Tableau dashboard aimed at an operational decision.
 Out of **752,972** calls offered over the year, **80,253 were abandoned — a blended rate of
 10.7%**. The analysis shows this is **not** caused by agents being overworked. It is driven by
 **forecast accuracy** (primary) and **shrinkage** (secondary). The fix is better interval-level
-forecasting and tighter shrinkage control around predictable demand surges — not blanket hiring.
+forecasting and tighter shrinkage control around predictable demand surges.
 
 ## The three-part finding
 
