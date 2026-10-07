@@ -6,7 +6,7 @@ dataset modelled on a UK water utility (South West Water), covering ~50,000 inte
 records across 7 queues.
 
 **Live interactive dashboard:**
-https://public.tableau.com/app/profile/aryan.more3059/viz/SouthWestWater-CallAbandonmentAnalysis/Dashboard1
+(https://public.tableau.com/app/profile/aryan.more3059/viz/CallAbandonmentRate/Dashboard1)
 
 ---
 
@@ -29,7 +29,7 @@ forecasting and tighter shrinkage control around predictable demand surges.
 
 **1. Occupancy is not the constraint.**
 The centre runs cool on average (mean occupancy ~40%, 99th percentile ~71%). Counter-intuitively,
-abandonment is *higher* at low occupancy — because 30-minute interval averages hide the
+abandonment is *higher* at low occupancy because 30-minute interval averages hide the
 intra-interval demand bursts that actually cause callers to wait and give up.
 
 **2. Forecast accuracy is the primary driver.**
@@ -41,7 +41,7 @@ builds faster than it clears → callers abandon.
 
 **3. Shrinkage is the secondary driver.**
 Roughly **30% of scheduled agent time** never reaches the phones (breaks, sickness, training,
-meetings) — about 134,000 agent-intervals lost over the year. Abandonment climbs cleanly from
+meetings) about 134,000 agent-intervals lost over the year. Abandonment climbs cleanly from
 ~2.7% in low-shrinkage intervals to ~12% in high-shrinkage ones.
 
 Supporting evidence: abandonment concentrates in high-volume "surge" intervals and in specific
@@ -65,7 +65,7 @@ to act:
 ## The data
 
 A synthetic dataset designed so that abandonment **emerges from queue dynamics** — a per-call
-caller-patience threshold tested against modelled wait times — rather than being randomly
+caller-patience threshold tested against modelled wait times rather than being randomly
 assigned. Real water-sector demand drivers are built into the data:
 
 - Freeze-thaw burst mains (late Jan/Feb) — the signature spike of the year
@@ -79,10 +79,12 @@ cause, and ~30% shrinkage is applied so scheduled headcount differs from availab
 ## Repository structure
 
 ```
-├── data/         interval and daily aggregate CSVs
-├── notebooks/    exploratory analysis (Python / pandas)
-├── dashboard/    packaged Tableau workbook (.twbx) + screenshots
-└── docs/         detailed project notes
+├── README.md
+├── exploratory_analysis.ipynb   Python / pandas analysis
+├── interval_facts.csv           interval-level data
+├── date_dim.csv                 date dimension
+├── wfm_aggregates.xlsx          aggregated WFM metrics
+└── screenshots (.png)           dashboard screenshots
 ```
 
 ## Method
@@ -98,7 +100,7 @@ The dataset models standard utility opening hours (Mon-Fri full service, Sat red
 holidays emergency-only), which is why the heatmap shows no weekend-evening activity. In reality
 the centre runs 24/7 for emergencies with normal hours for non-urgent queues; a future iteration
 would reflect that split. The findings — forecast accuracy as the primary driver, shrinkage as
-secondary — hold within operating hours regardless of the exact opening-hours model.
+secondary hold within operating hours regardless of the exact opening-hours model.
 
 ## Tools
 
