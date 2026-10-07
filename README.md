@@ -1,4 +1,4 @@
-# Call Abandonment Analysis — UK Water Utility Contact Centre
+# Call Abandonment Analysis, UK Water Utility Contact Centre
 
 A Workforce Management (WFM) analysis investigating why customers abandon calls in a
 contact-centre queue, and where to intervene to reduce it. Built on a simulated 12-month
